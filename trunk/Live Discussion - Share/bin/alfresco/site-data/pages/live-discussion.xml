@@ -1,0 +1,5 @@
+<page>
+	<title>Live Discussion</title>
+	<template-instance>live-discussion</template-instance>
+	<authentication>user</authentication>
+</page>

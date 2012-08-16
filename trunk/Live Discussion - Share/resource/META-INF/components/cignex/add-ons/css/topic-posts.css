@@ -1,0 +1,19 @@
+.chatbox {
+	border:1px solid #d1c7ac;
+	width: 100%;
+	height: 60px;
+	color:#333333;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+	font-family:tahoma, arial, sans-serif;
+	font-size: 12px;
+}
+
+tr.chatMessage td {
+	border-bottom: 1pt solid black;
+	padding-botton: 5px;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
