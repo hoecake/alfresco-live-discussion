@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Topic Post POST WebScript</shortname>
+	<description>POST a post for a given Topic</description>
+	<url>/cignex/addons/topic-post</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

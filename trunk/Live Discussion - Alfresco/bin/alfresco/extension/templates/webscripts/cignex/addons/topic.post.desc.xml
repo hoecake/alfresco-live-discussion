@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Topic POST WebScript</shortname>
+	<description>Create a Topic along with initial Post on a given noderef</description>
+	<url>/cignex/addons/topic</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>

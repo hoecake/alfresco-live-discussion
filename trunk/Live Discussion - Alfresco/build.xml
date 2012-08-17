@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<project name="Live Discussion - Alfresco" default="touch" basedir=".">
+	
+    <property file="build.properties"/>
+    <property name="project.dir" value="."/>
+    <property name="build.dir" value="${project.dir}/build"/>
+    <property name="dist.dir" value="${build.dir}/dist"/>
+    <property name="config.dir" value="${project.dir}/config"/>
+    <property name="jar.file" value="${build.dir}/lib/live-discussion-alfresco.jar"/>
+    <property name="amp.file" value="${dist.dir}/live-discussion-alfresco.amp"/>
+
+	<target name="clean" description="Clean output directories">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+    <target name="mkdirs">
+        <mkdir dir="${build.dir}/dist" />
+        <mkdir dir="${build.dir}/lib" />
+    </target>
+    
+    <path id="class.path">
+        <fileset dir="${tomcat.work.home}/lib" includes="**/*.jar"/>
+        <fileset dir="${tomcat.work.home}/webapps/alfresco/WEB-INF/lib" includes="**/*.jar"/>
+    </path>
+	
+        	
+	<target name="compile" depends="clean, mkdirs">
+        <mkdir dir="${build.dir}/classes" />
+        <javac includeAntRuntime="no" debug="true" classpathref="class.path" srcdir="${project.dir}/src" destdir="${build.dir}/classes" />
+    </target>
+    
+
+	<target name="package-jar" depends="compile">
+		<delete file="${jar.file}"/>
+        <jar destfile="${jar.file}" >
+            <fileset dir="${build.dir}/classes" includes="**/*.class" />
+        </jar>
+    </target>
+	
+    <target name="package-amp" depends="package-jar" description="Package the Module" >
+        <zip destfile="${amp.file}" >
+            <fileset dir="${project.dir}/build" includes="lib/*.jar" />
+            <fileset dir="${project.dir}" includes="config/**/*.*" />
+            <fileset dir="${project.dir}" includes="module.properties" />
+        </zip>
+    </target>
+
+	<target name="dev-package-jar" depends="compile">
+		<delete file="${jar.file}"/>
+        <jar destfile="${jar.file}" >
+            <fileset dir="${build.dir}/classes" includes="**/*.class" />
+            <fileset dir="${config.dir}" />
+        </jar>
+		<copy todir="${tomcat.work.home}/webapps/alfresco/WEB-INF/lib">
+			<fileset dir="${build.dir}/lib"/>
+		</copy>		
+    </target>
+	
+	<target name="touch" depends="dev-package-jar">
+		<touch file="${tomcat.work.home}/webapps/alfresco/WEB-INF/lib/live-discussion-alfresco.jar"/>
+    </target>
+	
+</project>

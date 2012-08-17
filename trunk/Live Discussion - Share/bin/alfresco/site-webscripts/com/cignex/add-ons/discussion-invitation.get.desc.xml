@@ -1,0 +1,6 @@
+<webscript>
+   <shortname>Get Discussion Invitation</shortname>
+   <description>Gets all discussion invitations</description>
+   <family>user-dashlet</family>
+   <url>/components/dashlets/cignex/addons/discussion-invitation</url>
+</webscript>
