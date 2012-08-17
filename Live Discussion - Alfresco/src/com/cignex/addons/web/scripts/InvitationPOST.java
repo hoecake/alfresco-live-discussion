@@ -110,9 +110,9 @@ public class InvitationPOST extends DeclarativeWebScript{
 					if(invitedUserList.size() > 0){
 						Action mailAction = this.serviceRegistry.getActionService().createAction(MailActionExecuter.NAME);
 						mailAction.setParameterValue(MailActionExecuter.PARAM_SUBJECT, "You are invited to a discussion topic");        
-						mailAction.setParameterValue(MailActionExecuter.PARAM_TO_MANY, invitedUserList.toArray());
+						mailAction.setParameterValue(MailActionExecuter.PARAM_TO_MANY, (Serializable)invitedUserList);
 						mailAction.setParameterValue(MailActionExecuter.PARAM_IGNORE_SEND_FAILURE, true);
-						mailAction.setParameterValue(MailActionExecuter.PARAM_TEXT, "Hello,\nYou are invited to a discussion topic. Please visit your Dashboard for more information\n\nThank You");
+						mailAction.setParameterValue(MailActionExecuter.PARAM_TEXT, "Hello,\nYou are invited to a discussion topic. Please visit your Alfresco Share Dashboard for more information\n\nThank You");
 						this.serviceRegistry.getActionService().executeAction(mailAction, null);								
 					}
 				} else {
