@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Topic GET WebScript</shortname>
+	<description>Gets all topics along with noderef and name for a given
+		nodeRef</description>
+	<url>/cignex/addons/topic?nodeRef={nodeRef}</url>
+	<format default="json">argument</format>
+	<authentication>user</authentication>
+</webscript>
