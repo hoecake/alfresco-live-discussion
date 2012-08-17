@@ -1,7 +1,0 @@
-<webscript>
-	<shortname>Discussion Invitation POST WebScript</shortname>
-	<description>Invite set of users to the discussion topic</description>
-	<url>/cignex/addons/discussioninvite</url>
-	<format default="json">argument</format>
-	<authentication>user</authentication>
-</webscript>

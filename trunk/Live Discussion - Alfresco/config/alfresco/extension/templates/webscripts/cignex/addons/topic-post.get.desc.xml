@@ -1,7 +1,0 @@
-<webscript>
-	<shortname>Topic Post GET WebScript</shortname>
-	<description>Gets all posts for a given topic nodeRef</description>
-	<url>/cignex/addons/topic-post?topicNodeRef={topicNodeRef}</url>
-	<format default="json">argument</format>
-	<authentication>user</authentication>
-</webscript>

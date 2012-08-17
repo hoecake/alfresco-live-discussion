@@ -1,7 +1,0 @@
-<webscript>
-	<shortname>Discussion Invitation GET WebScript</shortname>
-	<description>Get current users invitations on the discussion topic</description>
-	<url>/cignex/addons/discussioninvite</url>
-	<format default="json">argument</format>
-	<authentication>user</authentication>
-</webscript>
